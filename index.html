@@ -14,5 +14,11 @@
     <p>Loading message from the API: <b id="name">...</b></p>
   </main>
 </body>
+<script>
+  (async function () {
+    let t = await (await fetch(`/api/HttpExample?name=John`)).text();
+    document.querySelector('#name').textContent = t;
+  }())
+</script>
 
 </html>
